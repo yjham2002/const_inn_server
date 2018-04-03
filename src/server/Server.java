@@ -11,9 +11,6 @@ import server.ignition.ServiceIgniter;
 public class Server {
 
     public static void main(String... args){
-        /**
-         * Service Server Ignition
-         */
         ServiceIgniter.getInstance().igniteServiceServer();
     }
 

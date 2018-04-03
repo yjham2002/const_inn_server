@@ -23,19 +23,35 @@ public class Log {
     }
 
     public static void e(Object msg){
-        System.err.println(logPrefix(ERR) + msg.toString());
+        if(msg == null){
+            System.err.println(logPrefix(ERR) + null);
+        }else{
+            System.err.println(logPrefix(ERR) + msg.toString());
+        }
     }
 
     public static void i(Object msg){
-        System.out.println(logPrefix(INFO) + msg.toString());
+        if(msg == null){
+            System.out.println(logPrefix(INFO) + null);
+        }else{
+            System.out.println(logPrefix(INFO) + msg.toString());
+        }
     }
 
     public static void e(String tag, Object msg){
-        System.err.println(logPrefix(ERR) + "[" + tag + "] " + msg.toString());
+        if(msg == null){
+            System.err.println(logPrefix(ERR) + "[" + tag + "] " + null);
+        }else{
+            System.err.println(logPrefix(ERR) + "[" + tag + "] " + msg.toString());
+        }
     }
 
     public static void i(String tag, Object msg){
-        System.out.println(logPrefix(INFO) + "[" + tag + "] " + msg.toString());
+        if(msg == null){
+            System.out.println(logPrefix(INFO) + "[" + tag + "] " + null);
+        }else{
+            System.out.println(logPrefix(INFO) + "[" + tag + "] " + msg.toString());
+        }
     }
 
     private static String logPrefix(String prefix){

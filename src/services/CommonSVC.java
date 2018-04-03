@@ -5,13 +5,9 @@ import databases.mybatis.mapper.DiligenceMapper;
 import databases.mybatis.mapper.UserMapper;
 import databases.paginator.ListBox;
 import databases.paginator.PageInfo;
-import org.apache.commons.lang3.StringUtils;
 import org.apache.ibatis.session.SqlSession;
 import server.comm.DataMap;
 import server.rest.DataMapUtil;
-import utils.kopas.AKopasTransmitter;
-import utils.kopas.KopasReturn;
-import utils.kopas.KopasTransmitter;
 
 import java.util.List;
 import java.util.Vector;
@@ -88,11 +84,6 @@ public class CommonSVC extends BaseService {
             DiligenceMapper diligenceMapper = sqlSession.getMapper(DiligenceMapper.class);
             return diligenceMapper.getGatesByBeacon(beaconSN, major, minor);
         }
-    }
-
-    public KopasReturn getStatusOfKopasTest(){
-        KopasReturn kopasReturn = new KopasTransmitter().sendAndGet(AKopasTransmitter.PID.doAction, "d8faq8dn", AKopasTransmitter.ACTION.OFF);
-        return kopasReturn;
     }
 
     // TODO
