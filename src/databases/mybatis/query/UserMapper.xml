@@ -1,0 +1,242 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="databases.mybatis.mapper.UserMapper">
+
+    <select id="getUser" resultType="DataMap">
+        SELECT * FROM tblMember WHERE `email`=#{id} AND `password`=#{pw} AND `status`=1 LIMIT 1
+    </select>
+
+    <select id="getUserById" resultType="DataMap">
+        SELECT * FROM tblMember WHERE `email`=#{id} LIMIT 1
+    </select>
+
+    <select id="getUserByKey" resultType="DataMap">
+        SELECT * FROM tblMember WHERE `id`=#{id}
+    </select>
+
+    <select id="getPrimaryWorkPlace" resultType="DataMap">
+        SELECT * FROM tblAffiliation WHERE memberId=#{id} AND isPrimary=1
+    </select>
+
+    <select id="getUserByApprovalCodeStateless" resultType="DataMap">
+        SELECT * FROM tblMember WHERE `approvalCode`=#{code} LIMIT 1
+    </select>
+
+    <select id="getUserByApprovalCode" resultType="DataMap">
+        SELECT * FROM tblMember WHERE `approvalCode`=#{code} AND `status`=0 LIMIT 1
+    </select>
+
+    <update id="changeUserStatus">
+        UPDATE tblMember SET status=#{status} WHERE `id` = #{id}
+    </update>
+
+    <insert id="saveTest">
+        INSERT INTO tblAdmin(account) values(#{param})
+    </insert>
+
+    <select id="findEmail" resultType="DataMap">
+        SELECT * FROM tblMember WHERE `name`=#{name} AND `phone`=#{phone} AND `status`=1 LIMIT 1
+    </select>
+
+    <select id="findPassword" resultType="DataMap">
+        SELECT * FROM tblMember WHERE `name`=#{name} AND `phone`=#{phone} AND `email`=#{email} AND `status`=1 LIMIT 1
+    </select>
+
+    <update id="initEmailApprovalCode">
+        UPDATE tblMember SET `approvalCode` = '' WHERE `id` = #{id}
+    </update>
+
+    <insert id="joinUserMember">
+        INSERT INTO tblMember(`name`, `email`, `password`, `phone`, `deviceType`, `regKey`, `status`, `lastIp`, `uptDate`, `regDate`, `approvalCode`)
+        VALUES(#{name}, #{email}, #{password}, #{phone}, #{deviceType}, #{regKey}, 0, #{lastIp}, NOW(), NOW(), #{approvalCode})
+    </insert>
+
+    <update id="changeName">
+        UPDATE tblMember SET `name`=#{name} WHERE `id`=#{id}
+    </update>
+
+    <update id="changePhone">
+        UPDATE tblMember SET `phone`=#{phone} WHERE `id`=#{id}
+    </update>
+
+    <update id="changePassword">
+        UPDATE tblMember SET `password`=#{pw} WHERE `id`=#{id}
+    </update>
+
+    <update id="turnOnPush">
+        UPDATE tblMember SET `flagPush`=0 WHERE `id`=#{id}
+    </update>
+
+    <update id="turnOffPush">
+        UPDATE tblMember SET `flagPush`=1 WHERE `id`=#{id}
+    </update>
+
+    <update id="turnOnAlarm">
+        UPDATE tblMember SET `flagAlarm`=0 WHERE `id`=#{id}
+    </update>
+
+    <update id="turnOffAlarm">
+        UPDATE tblMember SET `flagAlarm`=1 WHERE `id`=#{id}
+    </update>
+
+    <update id="turnOnGesture">
+        UPDATE tblMember SET `flagGesture`=0 WHERE `id`=#{id}
+    </update>
+
+    <update id="turnOffGesture">
+        UPDATE tblMember SET `flagGesture`=1 WHERE `id`=#{id}
+    </update>
+
+    <update id="updateLastLoginDate">
+        UPDATE tblMember SET `lastLogin` = NOW() WHERE `id`=#{id}
+    </update>
+
+    <select id="getWorkplaceList" resultType="DataMap">
+        SELECT *, (SELECT `name` FROM tblCompany C WHERE C.`id`=A.`companyId` LIMIT 1) AS `companyName`
+        FROM tblAffiliation A WHERE `memberId` = #{id} ORDER BY `companyName`
+    </select>
+
+    <select id="getWorkplaceDetail" resultType="DataMap">
+        SELECT
+          *,
+          (SELECT description FROM tblZipSido WHERE sidoID = C.sidoCode) AS sidoTxt,
+          (SELECT description FROM tblZipGugun WHERE gugunID = C.gunguCode) AS gunguTxt,
+          (SELECT description FROM tblZipDong WHERE dongID = C.dongCode) AS dongTxt
+        FROM tblAffiliation A JOIN tblCompany C ON A.companyId = C.id
+        WHERE C.id = #{id}
+        LIMIT 0, 1
+    </select>
+
+    <select id="getWorkplaceAdmin" resultType="DataMap">
+        SELECT
+          *,
+          (SELECT title FROM tblPosition WHERE A.positionId = id) AS positionTxt,
+          (SELECT title FROM tblDept WHERE A.deptId = id) AS deptTxt
+        FROM tblMember M JOIN tblAffiliation A ON M.id = A.memberId
+        WHERE A.companyId = #{id}
+        <![CDATA[
+        AND A.permission < '130'
+        ]]>
+        LIMIT 0, 1
+    </select>
+
+    <select id="getAffiliationCount" resultType="Integer">
+        SELECT COUNT(*) FROM tblAffiliation WHERE memberId=#{memberId} AND companyId=#{companyId}
+    </select>
+
+    <insert id="addWorkplace" >
+        INSERT INTO tblAffiliation(memberId, companyId, permission, uptDate, regDate)
+        VALUES (#{memberId}, #{companyId}, #{permission}, NOW(), NOW())
+    </insert>
+
+    <select id="getApprovalCode" resultType="String">
+        SELECT code FROM tblApproval WHERE companyId = #{companyId} LIMIT 1
+    </select>
+
+    <update id="approveWorkplace">
+      UPDATE tblAffiliation
+      SET isApproved = 1
+      WHERE memberId = #{memberId} AND companyId = #{companyId}
+    </update>
+
+    <select id="getUserCurrentDiligence" resultType="DataMap">
+        SELECT *
+        FROM (
+          SELECT
+          *,
+          (SELECT companyId FROM tblGate WHERE id = D.gateId) AS companyId
+          FROM tblDiligence D
+          WHERE insId=#{memberId} AND `status` != '0' AND classifier = 0
+        ) TEMP
+        WHERE companyId = #{companyId}
+        ORDER BY uptDate DESC LIMIT 1;
+    </select>
+
+    <select id="countDoorGesture" resultType="Integer">
+        SELECT COUNT(*) FROM tblGestureAllowedGate WHERE memberId = #{memberId}
+    </select>
+
+    <update id="gestureDoor">
+        INSERT INTO tblGestureAllowedGate(memberId, gateId, uptDate, regDate) VALUES(#{memberId}, #{gateId}, NOW(), NOW())
+        ON DUPLICATE KEY UPDATE uptDate = NOW()
+    </update>
+
+    <delete id="undoGestureDoor">
+        DELETE FROM tblGestureAllowedGate
+        WHERE memberId = #{memberId} AND gateId = #{gateId}
+    </delete>
+
+    <select id="countDoorLikes" resultType="Integer">
+        SELECT COUNT(*) FROM tblFavoriteGate WHERE memberId=#{memberId}
+    </select>
+
+    <update id="likeDoor">
+        INSERT INTO tblFavoriteGate(memberId, gateId, uptDate, regDate) VALUES(#{memberId}, #{gateId}, NOW(), NOW())
+        ON DUPLICATE KEY UPDATE uptDate = NOW()
+    </update>
+
+    <delete id="unlikeDoor">
+        DELETE FROM tblFavoriteGate
+        WHERE memberId = #{memberId} AND gateId = #{gateId}
+    </delete>
+
+    <select id="getLikedDoorList" resultType="DataMap">
+        SELECT *, (SELECT title FROM tblGate WHERE id = gateId) AS gateTitle
+        FROM tblFavoriteGate WHERE memberId=#{memberId} ORDER BY `gateId` ASC
+    </select>
+
+    <select id="getDoorListOfCompany" resultType="DataMap">
+        SELECT
+          *,
+          CASE WHEN (SELECT memberId FROM tblGestureAllowedGate WHERE gateId = id) IS NOT NULL
+          THEN 1
+          ELSE 0
+          END AS gestureFlag
+        FROM tblGate WHERE companyId=#{companyId} ORDER BY `id`
+    </select>
+
+    <select id="getDoorDetail" resultType="DataMap">
+        SELECT
+          *,
+          CASE WHEN (SELECT COUNT(*) FROM tblFavoriteGate WHERE gateId = #{gateId} AND memberId = #{memberId}) > 0
+          THEN 1 ELSE 0
+          END AS isFavored,
+          CASE WHEN (SELECT COUNT(*) FROM tblGestureAllowedGate WHERE gateId = #{gateId} AND memberId = #{memberId}) > 0
+          THEN 1 ELSE 0
+          END AS isGestureEnabled,
+          DATE_FORMAT(startDate, "%Y-%m-%d") AS formattedStartDate,
+          DATE_FORMAT(endDate, "%Y-%m-%d") AS formattedEndDate
+        FROM tblGate WHERE id = #{gateId} LIMIT 1
+    </select>
+
+    <select id="getEntranceRange" resultType="DataMap">
+        SELECT * FROM tblEntranceRange WHERE insId = #{gateId} AND type = '0' ORDER BY weekDay ASC
+    </select>
+
+    <update id="initUser">
+        UPDATE tblMember SET `deviceType`=#{deviceType}, `regKey`=#{regKey}, `uptDate`=NOW(), `lastIp`=#{lastIp} WHERE `id`=#{memberId}
+    </update>
+
+    <delete id="deleteWorkplace">
+        DELETE FROM tblAffiliation WHERE memberId=#{id} AND companyId=#{company}
+    </delete>
+
+    <select id="getLatestDiligenceCompany" resultType="DataMap">
+        SELECT *
+        FROM tblDiligence D JOIN tblGate G ON D.gateId = G.id
+        WHERE G.companyId = #{company} AND insId = #{id} AND status != '0'
+        ORDER BY D.uptDate DESC LIMIT 1
+    </select>
+
+    <select id="getLatestDiligenceUser" resultType="DataMap">
+        SELECT *, (SELECT name FROM tblCompany WHERE id = G.companyId) AS companyTitle, DATE_FORMAT(D.uptDate, "%r") AS uptMeridiem
+        FROM tblDiligence D JOIN tblGate G ON D.gateId = G.id
+        WHERE D.insId = #{id} AND status != '0'
+        ORDER BY D.uptDate DESC LIMIT 2
+    </select>
+
+    <insert id="insertDiligence">
+        INSERT INTO tblDiligence(`insId`, `gateId`, `classifier`, `type`, `uptDate`, `regDate`)
+        VALUES(#{memberId}, #{gateId}, #{classifier}, #{type}, NOW(), NOW())
+    </insert>
+</mapper>

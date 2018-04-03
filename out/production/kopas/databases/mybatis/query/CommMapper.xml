@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="databases.mybatis.mapper.CommMapper">
+
+    <select id="getSidoList" resultType="DataMap">
+        SELECT * FROM tblZipSido ORDER BY `description`
+    </select>
+
+    <select id="getGugunList" resultType="DataMap">
+        SELECT * FROM tblZipGugun WHERE sidoID=#{sidoID} ORDER BY `description`
+    </select>
+
+    <select id="getCompanyList" resultType="DataMap">
+        SELECT * FROM tblCompany
+        WHERE 1=1
+        <if test="search != null and search != ''">
+            AND (`name` LIKE CONCAT('%', #{search}, '%'))
+        </if>
+        <if test="sido != null and sido != '' and sido != -1">
+            AND `sidoCode` = #{sido}
+        </if>
+        <if test="gungu != null and gungu != '' and gungu != -1">
+            AND `gunguCode` = #{gungu}
+        </if>
+        ORDER BY `name` ASC LIMIT #{page}, #{limit}
+    </select>
+
+    <select id="getCompanyCount" resultType="Integer">
+        SELECT COUNT(*) FROM tblCompany
+        WHERE 1=1
+        <if test="search != null and search != ''">
+            AND (`name` LIKE CONCAT('%', #{search}, '%'))
+        </if>
+        <if test="sido != null and sido != '' and sido != -1">
+            AND `sidoCode` = #{sido}
+        </if>
+        <if test="gungu != null and gungu != '' and gungu != -1">
+            AND `gunguCode` = #{gungu}
+        </if>
+    </select>
+
+    <select id="getBoardList" resultType="DataMap">
+        SELECT * FROM tblBoard
+        WHERE `type` = #{mode}
+        <if test="search != null and search != ''">
+            AND (`title` LIKE CONCAT('%', #{search}, '%'))
+        </if>
+        <if test="company != null and company != '' and company != -1">
+            AND `companyId` = #{company}
+        </if>
+        ORDER BY `id` DESC LIMIT #{page}, #{limit}
+    </select>
+
+    <select id="getBoardCount" resultType="Integer">
+        SELECT COUNT(*) FROM tblBoard
+        WHERE `type` = #{mode}
+        <if test="search != null and search != ''">
+            AND (`title` LIKE CONCAT('%', #{search}, '%'))
+        </if>
+        <if test="company != null and company != '' and company != -1">
+            AND `companyId` = #{company}
+        </if>
+    </select>
+
+    <select id="getBoard" resultType="DataMap">
+        SELECT * FROM tblBoard WHERE `id` = #{id}
+    </select>
+
+    <select id="getBesidesPrev" resultType="DataMap">
+        SELECT * FROM tblBoard
+        WHERE
+        `type` = (SELECT `type` FROM tblBoard WHERE `id` = #{id})
+        AND (#{id} > `id`)
+        AND `companyId` = (SELECT `companyId` FROM tblBoard WHERE `id` = #{id})
+        ORDER BY `id` DESC LIMIT 1
+    </select>
+
+    <select id="getFiltedBeacon" resultType="DataMap">
+        SELECT * FROM tblBeacon WHERE `serial` IN (${list})
+    </select>
+
+    <select id="getBesidesNext" resultType="DataMap">
+        SELECT * FROM tblBoard
+        WHERE
+        `type` = (SELECT `type` FROM tblBoard WHERE `id` = #{id})
+        AND (`id` > #{id})
+        AND `companyId` = (SELECT `companyId` FROM tblBoard WHERE `id` = #{id})
+        ORDER BY `id` ASC LIMIT 1
+    </select>
+
+</mapper>

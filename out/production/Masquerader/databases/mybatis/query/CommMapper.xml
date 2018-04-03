@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="databases.mybatis.mapper.CommMapper">
+
+    <select id="getDirectResponse" resultType="String">
+        SELECT static FROM tblStaticSentence WHERE serialWord=#{msg}
+    </select>
+
+    <select id="getMetaphors" resultType="DataMap">
+        SELECT includer, includee, SUM(frequency) AS frequency FROM tblMetaphore GROUP BY includer, includee ORDER BY includer
+    </select>
+
+    <select id="getNumberDictionary" resultType="DataMap">
+        SELECT `desc`, `value`, `tag` FROM tblNumber GROUP BY `desc` ORDER BY `DESC`
+    </select>
+
+    <select id="getTimeDictionary" resultType="DataMap">
+        SELECT `desc`, `standalone`, `meaning`, `diff` FROM tblTime GROUP BY `desc` ORDER BY `DESC`
+    </select>
+
+    <select id="getStaticBases" resultType="DataMap">
+        SELECT serialWord, serialTag, intention, SUM(frequency) AS frequency FROM tblStaticSentence GROUP BY serialWord, serialTag ORDER BY serialWord
+    </select>
+
+    <select id="getActions" resultType="DataMap">
+        SELECT *, CONCAT(objectSerial, '#', verbSerial) AS keyValue FROM tblRequestMapper GROUP BY CONCAT(objectSerial, '#', verbSerial) ORDER BY no
+    </select>
+
+    <select id="getKnowledges" resultType="DataMap">
+        SELECT word, refWord, SUM(frequency) AS frequency, `reverse` FROM tblKnowledgeLink GROUP BY word, refWord ORDER BY word
+    </select>
+
+    <select id="getFrequentBetween" resultType="Integer">
+        SELECT IFNULL(frequency, 0) AS frequency FROM `GBot`.`tblKnowledgeLink` WHERE word=#{param1} AND refWord=#{param2} AND tag=#{param3} AND refTag=#{param4}
+    </select>
+
+    <select id="getFrequentOfStatic" resultType="Integer">
+        SELECT IFNULL(frequency, 0) AS frequency FROM `GBot`.`tblStaticSentence` WHERE serialWord=#{param1} AND serialTag=#{param2} AND intention=#{param3}
+    </select>
+
+    <select id="getFrequentBetweenForMeta" resultType="Integer">
+        SELECT IFNULL(frequency, 0) AS frequency FROM `GBot`.`tblMetaphore` WHERE includer=#{param1} AND includee=#{param2} AND tag_r=#{param3} AND tag_e=#{param4}
+    </select>
+
+    <insert id="saveStaticSentence">
+        INSERT INTO `GBot`.`tblStaticSentence`(`serialWord`,`serialTag`,`intention`,`static`,`uptDate`,`regDate`) VALUES (#{param1}, #{param2}, #{param3}, #{param4},NOW(),NOW());
+    </insert>
+
+    <update id="updateStaticSentence">
+        UPDATE `GBot`.`tblStaticSentence` SET `frequency` = (`frequency` + 1), `uptDate` = NOW()  WHERE serialWord=#{param1} AND serialTag=#{param2} AND intention=#{param3}
+    </update>
+
+    <insert id="saveMetaLink">
+        INSERT INTO `GBot`.`tblMetaphore`(`includer`,`includee`,`tag_r`,`tag_e`,`uptDate`,`regDate`) VALUES (#{param1}, #{param2},#{param3}, #{param4}, NOW(), NOW());
+    </insert>
+
+    <update id="updateMetaLink">
+        UPDATE `GBot`.`tblMetaphore` SET `frequency` = (`frequency` + 1), `uptDate` = NOW() WHERE includer=#{param1} AND includee=#{param2} AND tag_r=#{param3} AND tag_e=#{param4}
+    </update>
+
+    <insert id="saveKnowledgeLink">
+        INSERT INTO `GBot`.`tblKnowledgeLink`(`word`,`refWord`,`tag`,`refTag`,`uptDate`,`regDate`, `reverse`) VALUES (#{param1}, #{param2}, #{param3}, #{param4}, NOW(), NOW(), #{param5});
+    </insert>
+
+    <update id="updateKnowledgeLink">
+        UPDATE `GBot`.`tblKnowledgeLink` SET `frequency` = (`frequency` + 1), `uptDate` = NOW() WHERE word=#{param1} AND refWord=#{param2} AND tag=#{param3} AND refTag=#{param4}
+    </update>
+
+    <delete id="deleteLog">
+        DELETE FROM tblKnowledgeLink WHERE tblKnowledgeLink.no = #{id}
+    </delete>
+
+</mapper>

@@ -1,0 +1,1012 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<dataSource name="kopas@1.201.142.86">
+  <database-model serializer="dbm" rdbms="MYSQL" format-version="4.4">
+    <root id="1"/>
+    <schema id="2" parent="1" name="kopas">
+      <Current>1</Current>
+      <Visible>1</Visible>
+    </schema>
+    <schema id="3" parent="1" name="appg"/>
+    <schema id="4" parent="1" name="bmwmotors"/>
+    <schema id="5" parent="1" name="carHospital"/>
+    <schema id="6" parent="1" name="cartrip"/>
+    <schema id="7" parent="1" name="cartrip_20151014"/>
+    <schema id="8" parent="1" name="cnsamc"/>
+    <schema id="9" parent="1" name="cupCast"/>
+    <schema id="10" parent="1" name="ddangDdangChicken"/>
+    <schema id="11" parent="1" name="Devicor"/>
+    <schema id="12" parent="1" name="djTalk"/>
+    <schema id="13" parent="1" name="duratech"/>
+    <schema id="14" parent="1" name="dyGolf"/>
+    <schema id="15" parent="1" name="FundWis"/>
+    <schema id="16" parent="1" name="fw_turi"/>
+    <schema id="17" parent="1" name="GBot"/>
+    <schema id="18" parent="1" name="giup"/>
+    <schema id="19" parent="1" name="globeK"/>
+    <schema id="20" parent="1" name="golfmon2015"/>
+    <schema id="21" parent="1" name="golfmon2016"/>
+    <schema id="22" parent="1" name="groupby"/>
+    <schema id="23" parent="1" name="gsa"/>
+    <schema id="24" parent="1" name="Hanatourist"/>
+    <schema id="25" parent="1" name="hansung"/>
+    <schema id="26" parent="1" name="happyace"/>
+    <schema id="27" parent="1" name="HealthQuiz"/>
+    <schema id="28" parent="1" name="hyedrim"/>
+    <schema id="29" parent="1" name="information_schema"/>
+    <schema id="30" parent="1" name="kcSpecialVehicle"/>
+    <schema id="31" parent="1" name="keyword"/>
+    <schema id="32" parent="1" name="kiwi"/>
+    <schema id="33" parent="1" name="Lamar"/>
+    <schema id="34" parent="1" name="Lavender"/>
+    <schema id="35" parent="1" name="lig"/>
+    <schema id="36" parent="1" name="louis"/>
+    <schema id="37" parent="1" name="LU"/>
+    <schema id="38" parent="1" name="MentalDoctor"/>
+    <schema id="39" parent="1" name="MentalDoctorEN"/>
+    <schema id="40" parent="1" name="MentalDoctorJP"/>
+    <schema id="41" parent="1" name="MentalDoctorSP"/>
+    <schema id="42" parent="1" name="MentalDoctorZH"/>
+    <schema id="43" parent="1" name="Michelin"/>
+    <schema id="44" parent="1" name="minimotors"/>
+    <schema id="45" parent="1" name="misstar"/>
+    <schema id="46" parent="1" name="mysql"/>
+    <schema id="47" parent="1" name="NaeKkot"/>
+    <schema id="48" parent="1" name="NaeKkotTest"/>
+    <schema id="49" parent="1" name="NaviOn"/>
+    <schema id="50" parent="1" name="OhThankYou"/>
+    <schema id="51" parent="1" name="ozzang"/>
+    <schema id="52" parent="1" name="pangaea"/>
+    <schema id="53" parent="1" name="Pigeon"/>
+    <schema id="54" parent="1" name="pushManager"/>
+    <schema id="55" parent="1" name="raynokorea"/>
+    <schema id="56" parent="1" name="rccl"/>
+    <schema id="57" parent="1" name="RDic"/>
+    <schema id="58" parent="1" name="richware_auto_config"/>
+    <schema id="59" parent="1" name="SNUH"/>
+    <schema id="60" parent="1" name="sohatechfarmdb"/>
+    <schema id="61" parent="1" name="solon"/>
+    <schema id="62" parent="1" name="sparkTu"/>
+    <schema id="63" parent="1" name="stylewithme"/>
+    <schema id="64" parent="1" name="tastingAlbum"/>
+    <schema id="65" parent="1" name="test"/>
+    <schema id="66" parent="1" name="testMal"/>
+    <schema id="67" parent="1" name="theborn"/>
+    <schema id="68" parent="1" name="TheLounge"/>
+    <schema id="69" parent="1" name="turi"/>
+    <schema id="70" parent="1" name="tutorialDB"/>
+    <schema id="71" parent="1" name="ucap"/>
+    <schema id="72" parent="1" name="WeddingCupid"/>
+    <schema id="73" parent="1" name="zzim"/>
+    <schema id="74" parent="1" name="qualityPeople"/>
+    <schema id="75" parent="1" name="sohatechfarmdb_2017"/>
+    <table id="76" parent="2" name="tblAdmin"/>
+    <table id="77" parent="2" name="tblAffiliation"/>
+    <table id="78" parent="2" name="tblApproval"/>
+    <table id="79" parent="2" name="tblBeacon"/>
+    <table id="80" parent="2" name="tblBoard"/>
+    <table id="81" parent="2" name="tblCodes"/>
+    <table id="82" parent="2" name="tblCompany"/>
+    <table id="83" parent="2" name="tblDept"/>
+    <table id="84" parent="2" name="tblDiligence"/>
+    <table id="85" parent="2" name="tblEntranceRange"/>
+    <table id="86" parent="2" name="tblFavoriteGate"/>
+    <table id="87" parent="2" name="tblGate"/>
+    <table id="88" parent="2" name="tblGestureAllowedGate"/>
+    <table id="89" parent="2" name="tblInvite"/>
+    <table id="90" parent="2" name="tblLink"/>
+    <table id="91" parent="2" name="tblMember"/>
+    <table id="92" parent="2" name="tblPosition"/>
+    <table id="93" parent="2" name="tblSalary"/>
+    <table id="94" parent="2" name="tblZipDong"/>
+    <table id="95" parent="2" name="tblZipGugun"/>
+    <table id="96" parent="2" name="tblZipSido"/>
+    <column id="97" parent="76" name="adminNumber">
+      <Position>1</Position>
+      <Comment>관리자 번호(Pkey)</Comment>
+      <DataType>int(11)|0</DataType>
+      <NotNull>1</NotNull>
+      <SequenceIdentity>1</SequenceIdentity>
+    </column>
+    <column id="98" parent="76" name="adminName">
+      <Position>2</Position>
+      <Comment>사용자명</Comment>
+      <DataType>varchar(32)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="99" parent="76" name="adminID">
+      <Position>3</Position>
+      <Comment>사용자 계정</Comment>
+      <DataType>varchar(32)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="100" parent="76" name="adminPWD">
+      <Position>4</Position>
+      <Comment>사용자 계정 암호</Comment>
+      <DataType>varchar(64)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="101" parent="76" name="regDate">
+      <Position>5</Position>
+      <Comment>등록일자</Comment>
+      <DataType>datetime|0</DataType>
+    </column>
+    <key id="102" parent="76" name="PRIMARY">
+      <NameSurrogate>1</NameSurrogate>
+      <ColNames>adminNumber</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <column id="103" parent="77" name="memberId">
+      <Position>1</Position>
+      <Comment>Member Id - Foreign Key</Comment>
+      <DataType>int(11)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="104" parent="77" name="companyId">
+      <Position>2</Position>
+      <Comment>Company Id - Foreign Key</Comment>
+      <DataType>int(11)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="105" parent="77" name="deptId">
+      <Position>3</Position>
+      <Comment>Department Id - Foreign Key</Comment>
+      <DataType>int(11)|0</DataType>
+    </column>
+    <column id="106" parent="77" name="positionId">
+      <Position>4</Position>
+      <Comment>Position Id - Foreign Key</Comment>
+      <DataType>int(11)|0</DataType>
+    </column>
+    <column id="107" parent="77" name="isPrimary">
+      <Position>5</Position>
+      <Comment>Flag For indicating the affiliation as a primary working place (0:False/1:True)</Comment>
+      <DataType>tinyint(4)|0</DataType>
+      <NotNull>1</NotNull>
+      <DefaultExpression>&apos;0&apos;</DefaultExpression>
+    </column>
+    <column id="108" parent="77" name="permission">
+      <Position>6</Position>
+      <Comment>Permission Code (tblCodes)</Comment>
+      <DataType>varchar(8)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="109" parent="77" name="isApproved">
+      <Position>7</Position>
+      <DataType>tinyint(4)|0</DataType>
+      <DefaultExpression>&apos;0&apos;</DefaultExpression>
+    </column>
+    <column id="110" parent="77" name="uptDate">
+      <Position>8</Position>
+      <Comment>Update Date</Comment>
+      <DataType>datetime|0</DataType>
+    </column>
+    <column id="111" parent="77" name="regDate">
+      <Position>9</Position>
+      <Comment>Registration Date</Comment>
+      <DataType>datetime|0</DataType>
+    </column>
+    <key id="112" parent="77" name="PRIMARY">
+      <NameSurrogate>1</NameSurrogate>
+      <ColNames>memberId
+companyId</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <column id="113" parent="78" name="companyId">
+      <Position>1</Position>
+      <Comment>사업장 외래키(tblCompany)</Comment>
+      <DataType>int(11)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="114" parent="78" name="code">
+      <Position>2</Position>
+      <Comment>승인코드</Comment>
+      <DataType>varchar(128)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="115" parent="78" name="expiry">
+      <Position>3</Position>
+      <Comment>만료 일자</Comment>
+      <DataType>datetime|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="116" parent="78" name="uptDate">
+      <Position>4</Position>
+      <Comment>갱신 일자</Comment>
+      <DataType>datetime|0</DataType>
+    </column>
+    <column id="117" parent="78" name="regDate">
+      <Position>5</Position>
+      <Comment>등록 일자</Comment>
+      <DataType>datetime|0</DataType>
+    </column>
+    <key id="118" parent="78" name="PRIMARY">
+      <NameSurrogate>1</NameSurrogate>
+      <ColNames>companyId</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <column id="119" parent="79" name="id">
+      <Position>1</Position>
+      <Comment>프라이머리</Comment>
+      <DataType>int(11)|0</DataType>
+      <NotNull>1</NotNull>
+      <SequenceIdentity>1</SequenceIdentity>
+    </column>
+    <column id="120" parent="79" name="title">
+      <Position>2</Position>
+      <Comment>Optional) 비콘명</Comment>
+      <DataType>varchar(128)|0</DataType>
+    </column>
+    <column id="121" parent="79" name="serial">
+      <Position>3</Position>
+      <Comment>비콘 시리얼</Comment>
+      <DataType>varchar(128)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="122" parent="79" name="minor">
+      <Position>4</Position>
+      <Comment>Minor Number</Comment>
+      <DataType>int(11)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="123" parent="79" name="major">
+      <Position>5</Position>
+      <Comment>Major Number</Comment>
+      <DataType>int(11)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="124" parent="79" name="uptDate">
+      <Position>6</Position>
+      <Comment>갱신 일자</Comment>
+      <DataType>datetime|0</DataType>
+    </column>
+    <column id="125" parent="79" name="regDate">
+      <Position>7</Position>
+      <Comment>등록 일자</Comment>
+      <DataType>datetime|0</DataType>
+    </column>
+    <key id="126" parent="79" name="PRIMARY">
+      <NameSurrogate>1</NameSurrogate>
+      <ColNames>id</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <column id="127" parent="80" name="id">
+      <Position>1</Position>
+      <Comment>Primary Key</Comment>
+      <DataType>int(11)|0</DataType>
+      <NotNull>1</NotNull>
+      <SequenceIdentity>1</SequenceIdentity>
+    </column>
+    <column id="128" parent="80" name="title">
+      <Position>2</Position>
+      <Comment>Title Text</Comment>
+      <DataType>varchar(256)|0</DataType>
+    </column>
+    <column id="129" parent="80" name="contents">
+      <Position>3</Position>
+      <Comment>Contents Text</Comment>
+      <DataType>text|0</DataType>
+    </column>
+    <column id="130" parent="80" name="type">
+      <Position>4</Position>
+      <Comment>Type (0:Notice/1:FAQ/2:Q&amp;A)</Comment>
+      <DataType>tinyint(4)|0</DataType>
+      <NotNull>1</NotNull>
+      <DefaultExpression>&apos;0&apos;</DefaultExpression>
+    </column>
+    <column id="131" parent="80" name="imgPath">
+      <Position>5</Position>
+      <Comment>Image Path(Optional)</Comment>
+      <DataType>varchar(512)|0</DataType>
+    </column>
+    <column id="132" parent="80" name="companyId">
+      <Position>6</Position>
+      <Comment>Company Group ID</Comment>
+      <DataType>int(11)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="133" parent="80" name="memberId">
+      <Position>7</Position>
+      <Comment>Author ID</Comment>
+      <DataType>int(11)|0</DataType>
+    </column>
+    <column id="134" parent="80" name="status">
+      <Position>8</Position>
+      <Comment>The number expression of the state (0:Normal/1:Deleted)</Comment>
+      <DataType>tinyint(4)|0</DataType>
+      <NotNull>1</NotNull>
+      <DefaultExpression>&apos;0&apos;</DefaultExpression>
+    </column>
+    <column id="135" parent="80" name="uptDate">
+      <Position>9</Position>
+      <Comment>Update Date</Comment>
+      <DataType>datetime|0</DataType>
+    </column>
+    <column id="136" parent="80" name="regDate">
+      <Position>10</Position>
+      <Comment>Registration Date</Comment>
+      <DataType>datetime|0</DataType>
+    </column>
+    <key id="137" parent="80" name="PRIMARY">
+      <NameSurrogate>1</NameSurrogate>
+      <ColNames>id</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <column id="138" parent="81" name="CODENAME">
+      <Position>1</Position>
+      <Comment>코드네임</Comment>
+      <DataType>varchar(64)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="139" parent="81" name="DISPLAY">
+      <Position>2</Position>
+      <Comment>표시내용</Comment>
+      <DataType>varchar(32)|0</DataType>
+    </column>
+    <column id="140" parent="81" name="CODE">
+      <Position>3</Position>
+      <Comment>코드</Comment>
+      <DataType>varchar(8)|0</DataType>
+    </column>
+    <column id="141" parent="82" name="id">
+      <Position>1</Position>
+      <Comment>프라이머리</Comment>
+      <DataType>int(11)|0</DataType>
+      <NotNull>1</NotNull>
+      <SequenceIdentity>1</SequenceIdentity>
+    </column>
+    <column id="142" parent="82" name="sidoCode">
+      <Position>2</Position>
+      <Comment>시도</Comment>
+      <DataType>int(11)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="143" parent="82" name="gunguCode">
+      <Position>3</Position>
+      <Comment>군구</Comment>
+      <DataType>int(11)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="144" parent="82" name="dongCode">
+      <Position>4</Position>
+      <Comment>동</Comment>
+      <DataType>int(11)|0</DataType>
+    </column>
+    <column id="145" parent="82" name="name">
+      <Position>5</Position>
+      <Comment>회사명</Comment>
+      <DataType>varchar(128)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="146" parent="82" name="phone">
+      <Position>6</Position>
+      <Comment>연락처</Comment>
+      <DataType>varchar(32)|0</DataType>
+    </column>
+    <column id="147" parent="82" name="corporateRN">
+      <Position>7</Position>
+      <Comment>사업자등록번호</Comment>
+      <DataType>varchar(64)|0</DataType>
+    </column>
+    <column id="148" parent="82" name="uptDate">
+      <Position>8</Position>
+      <Comment>갱신일자</Comment>
+      <DataType>datetime|0</DataType>
+    </column>
+    <column id="149" parent="82" name="regDate">
+      <Position>9</Position>
+      <Comment>등록일자</Comment>
+      <DataType>datetime|0</DataType>
+    </column>
+    <key id="150" parent="82" name="PRIMARY">
+      <NameSurrogate>1</NameSurrogate>
+      <ColNames>id</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <column id="151" parent="83" name="id">
+      <Position>1</Position>
+      <Comment>Primary Key</Comment>
+      <DataType>int(11)|0</DataType>
+      <NotNull>1</NotNull>
+      <SequenceIdentity>1</SequenceIdentity>
+    </column>
+    <column id="152" parent="83" name="title">
+      <Position>2</Position>
+      <Comment>Name of Dept.</Comment>
+      <DataType>varchar(256)|0</DataType>
+    </column>
+    <column id="153" parent="83" name="type">
+      <Position>3</Position>
+      <Comment>Type (0:Dept / 1:Team)</Comment>
+      <DataType>tinyint(4)|0</DataType>
+      <NotNull>1</NotNull>
+      <DefaultExpression>&apos;0&apos;</DefaultExpression>
+    </column>
+    <column id="154" parent="83" name="companyId">
+      <Position>4</Position>
+      <Comment>Foreign Key for classifying the company</Comment>
+      <DataType>int(11)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="155" parent="83" name="groupId">
+      <Position>5</Position>
+      <Comment>Grouping Id (Dept:Id Void Value, Team : Id of Dept.)</Comment>
+      <DataType>int(11)|0</DataType>
+    </column>
+    <column id="156" parent="83" name="status">
+      <Position>6</Position>
+      <Comment>Status (0:Normal, 1:Deactivated, 2:Deleted)</Comment>
+      <DataType>tinyint(4)|0</DataType>
+      <NotNull>1</NotNull>
+      <DefaultExpression>&apos;0&apos;</DefaultExpression>
+    </column>
+    <column id="157" parent="83" name="uptDate">
+      <Position>7</Position>
+      <Comment>Update Date</Comment>
+      <DataType>datetime|0</DataType>
+    </column>
+    <column id="158" parent="83" name="regDate">
+      <Position>8</Position>
+      <Comment>Registration Date</Comment>
+      <DataType>datetime|0</DataType>
+    </column>
+    <key id="159" parent="83" name="PRIMARY">
+      <NameSurrogate>1</NameSurrogate>
+      <ColNames>id</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <column id="160" parent="84" name="id">
+      <Position>1</Position>
+      <Comment>프라이머리</Comment>
+      <DataType>int(11)|0</DataType>
+      <NotNull>1</NotNull>
+      <SequenceIdentity>1</SequenceIdentity>
+    </column>
+    <column id="161" parent="84" name="insId">
+      <Position>2</Position>
+      <Comment>회원 외래키(tblMember) 혹은 초대장 외래키 (tblInvite)</Comment>
+      <DataType>int(11)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="162" parent="84" name="gateId">
+      <Position>3</Position>
+      <Comment>출입문 외래키(tblGate)</Comment>
+      <DataType>int(11)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="163" parent="84" name="classifier">
+      <Position>4</Position>
+      <Comment>insId의 의미를 표현하기 위한 구분자 (0:회원/1:초대장)</Comment>
+      <DataType>tinyint(4)|0</DataType>
+      <NotNull>1</NotNull>
+      <DefaultExpression>&apos;0&apos;</DefaultExpression>
+    </column>
+    <column id="164" parent="84" name="type">
+      <Position>5</Position>
+      <Comment>근태기록 타입 (0:출근/1:외출/2:복귀/3:퇴근)</Comment>
+      <DataType>tinyint(4)|0</DataType>
+      <NotNull>1</NotNull>
+      <DefaultExpression>&apos;0&apos;</DefaultExpression>
+    </column>
+    <column id="165" parent="84" name="status">
+      <Position>6</Position>
+      <Comment>튜플 상태 (1:정상/0:삭제)</Comment>
+      <DataType>tinyint(4)|0</DataType>
+      <NotNull>1</NotNull>
+      <DefaultExpression>&apos;1&apos;</DefaultExpression>
+    </column>
+    <column id="166" parent="84" name="uptDate">
+      <Position>7</Position>
+      <Comment>갱신 일자</Comment>
+      <DataType>datetime|0</DataType>
+    </column>
+    <column id="167" parent="84" name="regDate">
+      <Position>8</Position>
+      <Comment>등록 일자</Comment>
+      <DataType>datetime|0</DataType>
+    </column>
+    <key id="168" parent="84" name="PRIMARY">
+      <NameSurrogate>1</NameSurrogate>
+      <ColNames>id</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <column id="169" parent="85" name="insId">
+      <Position>1</Position>
+      <Comment>부분키-초대장(tblInvite) 혹은 출입문(tblGate)</Comment>
+      <DataType>int(11)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="170" parent="85" name="type">
+      <Position>2</Position>
+      <Comment>부분키-insId의 구분자(0:출입문/1:초대장)</Comment>
+      <DataType>tinyint(4)|0</DataType>
+      <NotNull>1</NotNull>
+      <DefaultExpression>&apos;0&apos;</DefaultExpression>
+    </column>
+    <column id="171" parent="85" name="weekDay">
+      <Position>3</Position>
+      <Comment>부분키-요일(Java Week를 따름)</Comment>
+      <DataType>tinyint(2)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="172" parent="85" name="startTime">
+      <Position>4</Position>
+      <Comment>출입 시작 시각</Comment>
+      <DataType>time|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="173" parent="85" name="endTime">
+      <Position>5</Position>
+      <Comment>출입 종료 시각</Comment>
+      <DataType>time|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="174" parent="85" name="regDate">
+      <Position>6</Position>
+      <Comment>등록일자</Comment>
+      <DataType>datetime|0</DataType>
+    </column>
+    <key id="175" parent="85" name="PRIMARY">
+      <NameSurrogate>1</NameSurrogate>
+      <ColNames>insId
+type
+weekDay</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <column id="176" parent="86" name="memberId">
+      <Position>1</Position>
+      <Comment>memberId - Partial Key</Comment>
+      <DataType>int(11)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="177" parent="86" name="gateId">
+      <Position>2</Position>
+      <Comment>gateId - Partial Key</Comment>
+      <DataType>int(11)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="178" parent="86" name="uptDate">
+      <Position>3</Position>
+      <Comment>Update Date</Comment>
+      <DataType>datetime|0</DataType>
+    </column>
+    <column id="179" parent="86" name="regDate">
+      <Position>4</Position>
+      <Comment>Registration Date</Comment>
+      <DataType>datetime|0</DataType>
+    </column>
+    <key id="180" parent="86" name="PRIMARY">
+      <NameSurrogate>1</NameSurrogate>
+      <ColNames>memberId
+gateId</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <column id="181" parent="87" name="id">
+      <Position>1</Position>
+      <Comment>프라이머리</Comment>
+      <DataType>int(11)|0</DataType>
+      <NotNull>1</NotNull>
+      <SequenceIdentity>1</SequenceIdentity>
+    </column>
+    <column id="182" parent="87" name="title">
+      <Position>2</Position>
+      <Comment>출입문명</Comment>
+      <DataType>varchar(128)|0</DataType>
+    </column>
+    <column id="183" parent="87" name="companyId">
+      <Position>3</Position>
+      <Comment>회사 외래키</Comment>
+      <DataType>int(11)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="184" parent="87" name="permission">
+      <Position>4</Position>
+      <Comment>권한구분(tblCodes)</Comment>
+      <DataType>varchar(8)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="185" parent="87" name="beaconId">
+      <Position>5</Position>
+      <Comment>BeaconId - Foreign Key</Comment>
+      <DataType>int(11)|0</DataType>
+    </column>
+    <column id="186" parent="87" name="controllerSN">
+      <Position>6</Position>
+      <Comment>컨트롤러 시리얼</Comment>
+      <DataType>varchar(32)|0</DataType>
+    </column>
+    <column id="187" parent="87" name="sensorSN">
+      <Position>7</Position>
+      <Comment>감지기 시리얼</Comment>
+      <DataType>varchar(32)|0</DataType>
+    </column>
+    <column id="188" parent="87" name="startDate">
+      <Position>8</Position>
+      <Comment>출입 시작 시각</Comment>
+      <DataType>datetime|0</DataType>
+    </column>
+    <column id="189" parent="87" name="endDate">
+      <Position>9</Position>
+      <Comment>출입 종료 시각</Comment>
+      <DataType>datetime|0</DataType>
+    </column>
+    <column id="190" parent="87" name="uptDate">
+      <Position>10</Position>
+      <Comment>갱신일자</Comment>
+      <DataType>datetime|0</DataType>
+    </column>
+    <column id="191" parent="87" name="regDate">
+      <Position>11</Position>
+      <Comment>등록일자</Comment>
+      <DataType>datetime|0</DataType>
+    </column>
+    <key id="192" parent="87" name="PRIMARY">
+      <NameSurrogate>1</NameSurrogate>
+      <ColNames>id</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <column id="193" parent="88" name="memberId">
+      <Position>1</Position>
+      <DataType>int(11)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="194" parent="88" name="gateId">
+      <Position>2</Position>
+      <DataType>int(11)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="195" parent="88" name="uptDate">
+      <Position>3</Position>
+      <DataType>datetime|0</DataType>
+    </column>
+    <column id="196" parent="88" name="regDate">
+      <Position>4</Position>
+      <DataType>datetime|0</DataType>
+    </column>
+    <key id="197" parent="88" name="PRIMARY">
+      <NameSurrogate>1</NameSurrogate>
+      <ColNames>memberId
+gateId</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <column id="198" parent="89" name="id">
+      <Position>1</Position>
+      <Comment>프라이머리</Comment>
+      <DataType>int(11)|0</DataType>
+      <NotNull>1</NotNull>
+      <SequenceIdentity>1</SequenceIdentity>
+    </column>
+    <column id="199" parent="89" name="title">
+      <Position>2</Position>
+      <Comment>초대장 제목</Comment>
+      <DataType>varchar(256)|0</DataType>
+    </column>
+    <column id="200" parent="89" name="releaseId">
+      <Position>3</Position>
+      <Comment>발급자 MemberId 외래키</Comment>
+      <DataType>int(11)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="201" parent="89" name="gateId">
+      <Position>4</Position>
+      <Comment>출입문 GateId 외래키</Comment>
+      <DataType>int(11)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="202" parent="89" name="companyId">
+      <Position>5</Position>
+      <Comment>사업장 외래키(tblCompany)</Comment>
+      <DataType>int(11)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="203" parent="89" name="phone">
+      <Position>6</Position>
+      <Comment>담당자 전화번호</Comment>
+      <DataType>varchar(32)|0</DataType>
+    </column>
+    <column id="204" parent="89" name="startDate">
+      <Position>7</Position>
+      <Comment>출입 시작 일자</Comment>
+      <DataType>datetime|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="205" parent="89" name="endDate">
+      <Position>8</Position>
+      <Comment>출입 종료 일자</Comment>
+      <DataType>datetime|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="206" parent="89" name="uptDate">
+      <Position>9</Position>
+      <Comment>갱신 일자</Comment>
+      <DataType>datetime|0</DataType>
+    </column>
+    <column id="207" parent="89" name="regDate">
+      <Position>10</Position>
+      <Comment>등록 일자</Comment>
+      <DataType>datetime|0</DataType>
+    </column>
+    <key id="208" parent="89" name="PRIMARY">
+      <NameSurrogate>1</NameSurrogate>
+      <ColNames>id</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <column id="209" parent="90" name="memberId">
+      <Position>1</Position>
+      <Comment>Member Id - Foreign Key</Comment>
+      <DataType>int(11)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="210" parent="90" name="companyId">
+      <Position>2</Position>
+      <Comment>Company Id - Foreign Key</Comment>
+      <DataType>int(11)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="211" parent="90" name="uptDate">
+      <Position>3</Position>
+      <Comment>Update Date</Comment>
+      <DataType>datetime|0</DataType>
+    </column>
+    <column id="212" parent="90" name="regDate">
+      <Position>4</Position>
+      <Comment>Registration Date</Comment>
+      <DataType>datetime|0</DataType>
+    </column>
+    <key id="213" parent="90" name="PRIMARY">
+      <NameSurrogate>1</NameSurrogate>
+      <ColNames>memberId
+companyId</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <column id="214" parent="91" name="id">
+      <Position>1</Position>
+      <Comment>Primary Key</Comment>
+      <DataType>int(11)|0</DataType>
+      <NotNull>1</NotNull>
+      <SequenceIdentity>1</SequenceIdentity>
+    </column>
+    <column id="215" parent="91" name="name">
+      <Position>2</Position>
+      <Comment>이름</Comment>
+      <DataType>varchar(32)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="216" parent="91" name="email">
+      <Position>3</Position>
+      <Comment>아이디</Comment>
+      <DataType>varchar(32)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="217" parent="91" name="password">
+      <Position>4</Position>
+      <Comment>비밀번호</Comment>
+      <DataType>varchar(256)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="218" parent="91" name="phone">
+      <Position>5</Position>
+      <Comment>휴대폰번호</Comment>
+      <DataType>varchar(16)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="219" parent="91" name="approvalCode">
+      <Position>6</Position>
+      <Comment>이메일 인증코드</Comment>
+      <DataType>varchar(32)|0</DataType>
+    </column>
+    <column id="220" parent="91" name="deviceType">
+      <Position>7</Position>
+      <Comment>0:Android/1:iOS/2:BlackBerry/3:Windows/4:nokia</Comment>
+      <DataType>tinyint(2)|0</DataType>
+      <NotNull>1</NotNull>
+      <DefaultExpression>&apos;-1&apos;</DefaultExpression>
+    </column>
+    <column id="221" parent="91" name="regKey">
+      <Position>8</Position>
+      <Comment>푸시키</Comment>
+      <DataType>varchar(512)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="222" parent="91" name="flagPush">
+      <Position>9</Position>
+      <Comment>0:수신 / 1:미수신</Comment>
+      <DataType>tinyint(2)|0</DataType>
+      <NotNull>1</NotNull>
+      <DefaultExpression>&apos;0&apos;</DefaultExpression>
+    </column>
+    <column id="223" parent="91" name="flagAlarm">
+      <Position>10</Position>
+      <Comment>0:수신 / 1:미수신</Comment>
+      <DataType>tinyint(2)|0</DataType>
+      <NotNull>1</NotNull>
+      <DefaultExpression>&apos;0&apos;</DefaultExpression>
+    </column>
+    <column id="224" parent="91" name="flagGesture">
+      <Position>11</Position>
+      <Comment>0:켜짐 / 1:꺼짐</Comment>
+      <DataType>tinyint(2)|0</DataType>
+      <NotNull>1</NotNull>
+      <DefaultExpression>&apos;0&apos;</DefaultExpression>
+    </column>
+    <column id="225" parent="91" name="status">
+      <Position>12</Position>
+      <Comment>0:대기 / 1:정상 / 2:이용정지 / 3:탈퇴</Comment>
+      <DataType>tinyint(2)|0</DataType>
+      <NotNull>1</NotNull>
+      <DefaultExpression>&apos;0&apos;</DefaultExpression>
+    </column>
+    <column id="226" parent="91" name="lastIp">
+      <Position>13</Position>
+      <Comment>마지막 접속 아이피</Comment>
+      <DataType>varchar(16)|0</DataType>
+    </column>
+    <column id="227" parent="91" name="lastLogin">
+      <Position>14</Position>
+      <Comment>마지막 로그인 일자</Comment>
+      <DataType>datetime|0</DataType>
+    </column>
+    <column id="228" parent="91" name="uptDate">
+      <Position>15</Position>
+      <Comment>갱신 일자</Comment>
+      <DataType>datetime|0</DataType>
+    </column>
+    <column id="229" parent="91" name="regDate">
+      <Position>16</Position>
+      <Comment>등록 일자</Comment>
+      <DataType>datetime|0</DataType>
+    </column>
+    <key id="230" parent="91" name="PRIMARY">
+      <NameSurrogate>1</NameSurrogate>
+      <ColNames>id</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <column id="231" parent="92" name="id">
+      <Position>1</Position>
+      <Comment>Primary Key</Comment>
+      <DataType>int(11)|0</DataType>
+      <NotNull>1</NotNull>
+      <SequenceIdentity>1</SequenceIdentity>
+    </column>
+    <column id="232" parent="92" name="title">
+      <Position>2</Position>
+      <Comment>Name of the position</Comment>
+      <DataType>varchar(128)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="233" parent="92" name="companyId">
+      <Position>3</Position>
+      <Comment>Foreign Constraint of The Company</Comment>
+      <DataType>int(11)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="234" parent="92" name="uptDate">
+      <Position>4</Position>
+      <Comment>Update Date</Comment>
+      <DataType>datetime|0</DataType>
+    </column>
+    <column id="235" parent="92" name="regDate">
+      <Position>5</Position>
+      <Comment>Registration Date</Comment>
+      <DataType>datetime|0</DataType>
+    </column>
+    <key id="236" parent="92" name="PRIMARY">
+      <NameSurrogate>1</NameSurrogate>
+      <ColNames>id</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <column id="237" parent="93" name="id">
+      <Position>1</Position>
+      <Comment>Primary Key</Comment>
+      <DataType>int(11)|0</DataType>
+      <NotNull>1</NotNull>
+      <SequenceIdentity>1</SequenceIdentity>
+    </column>
+    <column id="238" parent="93" name="memberId">
+      <Position>2</Position>
+      <Comment>memberId 외래키</Comment>
+      <DataType>int(11)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="239" parent="93" name="year">
+      <Position>3</Position>
+      <Comment>급여귀속년도</Comment>
+      <DataType>int(11)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="240" parent="93" name="month">
+      <Position>4</Position>
+      <Comment>급여귀속월</Comment>
+      <DataType>int(11)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="241" parent="93" name="uptDate">
+      <Position>5</Position>
+      <Comment>갱신 일자</Comment>
+      <DataType>datetime|0</DataType>
+    </column>
+    <column id="242" parent="93" name="regDate">
+      <Position>6</Position>
+      <Comment>등록 일자</Comment>
+      <DataType>datetime|0</DataType>
+    </column>
+    <key id="243" parent="93" name="PRIMARY">
+      <NameSurrogate>1</NameSurrogate>
+      <ColNames>id</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <column id="244" parent="94" name="dongID">
+      <Position>1</Position>
+      <Comment>동 아이디</Comment>
+      <DataType>int(11)|0</DataType>
+      <NotNull>1</NotNull>
+      <SequenceIdentity>1</SequenceIdentity>
+    </column>
+    <column id="245" parent="94" name="gugunID">
+      <Position>2</Position>
+      <Comment>군 아이디 </Comment>
+      <DataType>int(11)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="246" parent="94" name="description">
+      <Position>3</Position>
+      <Comment>동 이름</Comment>
+      <DataType>varchar(64)|0</DataType>
+      <NotNull>1</NotNull>
+      <DefaultExpression>&apos;&apos;</DefaultExpression>
+    </column>
+    <key id="247" parent="94" name="PRIMARY">
+      <NameSurrogate>1</NameSurrogate>
+      <ColNames>dongID</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <column id="248" parent="95" name="gugunID">
+      <Position>1</Position>
+      <Comment>군 아이디</Comment>
+      <DataType>int(11)|0</DataType>
+      <NotNull>1</NotNull>
+      <SequenceIdentity>1</SequenceIdentity>
+    </column>
+    <column id="249" parent="95" name="sidoID">
+      <Position>2</Position>
+      <Comment>시도 아이디</Comment>
+      <DataType>int(11)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="250" parent="95" name="description">
+      <Position>3</Position>
+      <Comment>군 이름</Comment>
+      <DataType>varchar(64)|0</DataType>
+      <NotNull>1</NotNull>
+      <DefaultExpression>&apos;&apos;</DefaultExpression>
+    </column>
+    <key id="251" parent="95" name="PRIMARY">
+      <NameSurrogate>1</NameSurrogate>
+      <ColNames>gugunID</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <column id="252" parent="96" name="sidoID">
+      <Position>1</Position>
+      <Comment>시도 아이디</Comment>
+      <DataType>int(11)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="253" parent="96" name="orderBy">
+      <Position>2</Position>
+      <Comment>정렬 순서</Comment>
+      <DataType>int(4)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="254" parent="96" name="description">
+      <Position>3</Position>
+      <Comment>시도 이름</Comment>
+      <DataType>varchar(64)|0</DataType>
+      <NotNull>1</NotNull>
+      <DefaultExpression>&apos;&apos;</DefaultExpression>
+    </column>
+    <key id="255" parent="96" name="PRIMARY">
+      <NameSurrogate>1</NameSurrogate>
+      <ColNames>sidoID</ColNames>
+      <Primary>1</Primary>
+    </key>
+  </database-model>
+</dataSource>

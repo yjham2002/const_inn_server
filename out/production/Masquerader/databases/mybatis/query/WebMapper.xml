@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="databases.mybatis.mapper.WebMapper">
+
+    <select id="getUser" resultType="DataMap">
+        SELECT * FROM tblAdmin WHERE `account`=#{id} AND `password`=#{pw} AND `status`=1 LIMIT 1
+    </select>
+
+    <select id="getListOfLogs" resultType="DataMap">
+        SELECT * FROM tblKnowledgeLink
+        WHERE 1=1
+        <if test="search != null and search != ''">
+            AND (word LIKE CONCAT('%', #{search}, '%') OR refWord LIKE CONCAT('%', #{search}, '%'))
+        </if>
+        ORDER BY regDate DESC LIMIT #{page}, #{limit}
+    </select>
+
+    <select id="getCountOfLogs" resultType="Integer">
+        SELECT COUNT(*) FROM tblKnowledgeLink
+        WHERE 1=1
+        <if test="search != null and search != ''">
+            AND (word LIKE CONCAT('%', #{search}, '%') OR refWord LIKE CONCAT('%', #{search}, '%'))
+        </if>
+    </select>
+
+    <insert id="saveTest">
+        INSERT INTO tblAdmin(account) values(#{param})
+    </insert>
+
+</mapper>

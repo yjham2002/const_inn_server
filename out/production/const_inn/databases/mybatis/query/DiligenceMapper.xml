@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="databases.mybatis.mapper.DiligenceMapper">
+
+    <select id="getDiligenceList" resultType="DataMap">
+
+    </select>
+
+    <select id="getDiligenceCount" resultType="Integer">
+
+    </select>
+
+    <select id="getGatesByBeacon" resultType="DataMap">
+        SELECT * FROM tblGate WHERE beaconId = (SELECT `id` FROM tblBeacon WHERE `serial`=#{beacon} AND `major`=#{major} AND `minor`=#{minor} LIMIT 1) ORDER BY `id` ASC
+    </select>
+
+    <select id="getGate" resultType="DataMap">
+        SELECT * FROM tblGate WHERE `id`=#{id}
+    </select>
+
+</mapper>
